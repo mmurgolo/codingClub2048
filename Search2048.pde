@@ -45,9 +45,24 @@ void draw() {
 
 
 void keyPressed() {
-
-  if (released) {
-  }
+  if (key == CODED) {
+    if (keyCode == UP) {
+      p.moveDirection = new PVector(0, -1);
+      p.moveTiles();
+    } else if (keyCode == DOWN) {
+      p.moveDirection = new PVector(0, 1);
+      p.moveTiles();
+    } 
+    if (keyCode == LEFT) {
+      p.moveDirection = new PVector(-1, 0);
+      p.moveTiles();
+    }
+    if (keyCode == RIGHT) {
+      p.moveDirection = new PVector(1, 0);
+      p.moveTiles();
+    }
+  } 
+ 
 }
 
 void keyReleased(){

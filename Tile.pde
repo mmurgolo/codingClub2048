@@ -10,7 +10,7 @@ class Tile {
   PVector pixelPosTo;
 
 
-  boolean deathOnImpact =false;
+  boolean deathOnImpact = false;
 
   Tile(int x, int y) {
     if (random(1)< 0.1) {
@@ -33,14 +33,14 @@ class Tile {
       fill(colour);
       noStroke();
       rect(pixelPos.x, pixelPos.y, 200, 200);
-      if (value < 8) {
+      if (value < 2048) {
         fill(40);
       } else {
         fill(240);
       }
       textAlign(CENTER, CENTER);
       textSize(50);
-      text(value = 0, pixelPos.x+100, pixelPos.y+100);
+      text(value, pixelPos.x+100, pixelPos.y+100);
     }
   }
 
@@ -70,7 +70,39 @@ class Tile {
   }
   
   void setColour() {
-
+    if (value == 2) {
+      colour = color(255,255,255);
+      }
+    if (value == 4) {
+      colour = color(245,245,220);
+      }
+    if (value == 8) {
+      colour = color(255,245,238);
+      }
+    if (value == 16) {
+      colour = color(255,160,122);
+      }
+    if (value == 32) {
+      colour = color(250,128,114);
+      }
+    if (value == 64) {
+      colour = color(233,150,122);
+      }
+    if (value == 128) {
+      colour = color(240,128,128);
+      }
+    if (value == 256) {
+      colour = color(205,92,92);
+      }
+    if (value == 512) {
+      colour = color(220,20,60);
+      }
+    if (value == 1028) {
+      colour = color(178,34,34);
+      }
+    if (value == 2048) {
+      colour = color(139,0,0);
+      }
   }
 
   Tile clone() {
